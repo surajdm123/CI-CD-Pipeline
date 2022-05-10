@@ -1,8 +1,5 @@
 # F0 Project Report
 
-## About Me
-- Suraj Mallikarjuna Devatha (sdevath)
-
 ## About my machine
 
 **Laptop Model:** Macbook Pro 14" (M1 Model) 
