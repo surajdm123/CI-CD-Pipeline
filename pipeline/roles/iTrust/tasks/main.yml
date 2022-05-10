@@ -1,0 +1,22 @@
+---
+- name: Clone iTrust Git Repo
+  git:
+    repo: "{{ GIT_URL }}"
+    dest: /iTrust
+    clone: yes
+    update: yes
+  become: yes
+
+- name: Copying application.yml file
+  copy:
+    src: /iTrust/iTrust2/src/main/resources/application.yml.template
+    dest: /iTrust/iTrust2/src/main/resources/application.yml
+    mode: 0666
+  become: yes
+
+- name: Adding database password in application.yml file
+  yedit:
+    src: /iTrust/iTrust2/src/main/resources/application.yml
+    key: spring.datasource.password
+    value: "{{ DB_PASSWORD }}"
+  become: yes

@@ -1,0 +1,2 @@
+# Install yedit from the Ansible Galaxy
+- src: kwoodson.yedit

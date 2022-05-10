@@ -1,0 +1,27 @@
+setup:
+  PACKAGE: 
+    - npm
+    - mongodb
+  NPM_PACKAGE:
+    - pm2
+  DATA:
+    GIT:
+    - https://github.com/pencilblue/pencilblue.git
+jobs:
+  - name: pencilblue-build
+    steps:
+      - name: Build PencilBlue Node App 
+        run: cd ~/pencilblue && npm install && npm build
+  - name: pencilblue-test
+    steps:
+      - name: Test pencilblue 
+        run: cd ~/pencilblue && npm test
+  - name: pencilblue-deploy
+    DATA:
+      port: 8080
+      REMOTE_DEST_PATH: /opt/pencilblue/
+    prod_steps:
+      - name: Clone repo into prod
+        run: cd /opt/ && git clone {{GIT}}
+      - name: Install dependencies
+        run: cd /opt/pencilblue/ && npm install

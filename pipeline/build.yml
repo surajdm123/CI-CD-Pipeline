@@ -1,0 +1,41 @@
+setup:
+  PACKAGE: 
+    - maven
+    - default-jdk
+    - mysql-server
+    - npm
+    # Dependencies needed for screenshot
+    - chromium-browser
+    - chromium-bsu
+  NPM_PACKAGE:
+    - pm2
+    - node-resemble-js
+  roles:
+    - iTrust
+  DATA:
+    GIT:
+    - https://github.ncsu.edu/sdevath/iTrust2-v10.git
+jobs:
+  - name: itrust-build
+    steps:
+      - name: Building and Packaging iTrust to war
+        run: cd /iTrust/iTrust2 && sudo mvn package war:war
+  - name: itrust-deploy
+    prod_steps:
+      tomcat:
+        TOMCAT_URL: https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.62/bin/apache-tomcat-9.0.62.tar.gz
+        DEST_PATH: /opt/tomcat
+      scp:
+        FILE_NAME: /iTrust/iTrust2/target/iTrust2-10.war
+      
+  - name: mutation-coverage
+    DATA:
+      GIT:
+      - https://github.com/chrisparnin/checkbox.io-micro-preview.git
+      LOG_FILE_PATH: mutation-coverage.log
+      iterations: 2
+    snapshots:
+     - http://localhost:3000/survey/long.md
+     - http://localhost:3000/survey/upload.md
+     - http://localhost:3000/survey/survey.md
+     - http://localhost:3000/survey/variations.md

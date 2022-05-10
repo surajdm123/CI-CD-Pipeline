@@ -1,0 +1,12 @@
+{
+    "threshold": {
+        "longmethod": 10,
+        "methodParametercount": 3,
+        "nestcount": 3
+    },
+    "tests": {
+        "calculator": ["calculator/server.js", "calculator/test/arithmetic.js"],
+        "checkbox": ["shared/cwd/ASTRewrite.js"],
+        "pencilblue": ["pencilblue/pencilblue.js", "pencilblue/test/controllers/base_api_controller_tests.js"]
+    }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "pipeline",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "chalk": "^4.1.2",
+    "dotenv": "^16.0.0",
+    "escodegen": "^2.0.0",
+    "esprima": "^4.0.1",
+    "got": "^10.7.0",
+    "hasbin": "^1.2.3",
+    "http-proxy": "^1.18.1",
+    "js-yaml": "^4.1.0",
+    "node-resemble-js": "^0.2.0",
+    "puppeteer": "^13.5.2",
+    "replace": "^1.2.1",
+    "ssh-keygen": "^0.5.0",
+    "yargs": "^17.3.1"
+  }
+}

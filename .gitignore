@@ -1,0 +1,18 @@
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+#IntelliJ files
+.idea/
+out/
+
+# BlueJ files
+*.ctxt
+
+# Mac related files
+*.DS_Store
+
+#env file
+.env

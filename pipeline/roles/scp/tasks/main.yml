@@ -1,0 +1,10 @@
+---
+# tasks file for maven
+- name: "scp war file to cloud"
+  command: "scp -oStrictHostKeyChecking=no -i {{ KEY_PATH }} -r {{ SRC_PATH }} root@{{ IP_ADDRESS }}:{{ DEST_PATH }}"
+
+# - name: Coping from local to remote
+#   become: yes
+#   copy:
+#     src: " {{ SRC_PATH }}"
+#     dest: " {{ DEST_PATH }}"

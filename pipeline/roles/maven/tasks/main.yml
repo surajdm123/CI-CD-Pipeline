@@ -1,0 +1,8 @@
+---
+# tasks file for maven
+- name: Install Maven
+  apt:
+    name: maven
+    state: present
+    update_cache: yes
+  become: yes

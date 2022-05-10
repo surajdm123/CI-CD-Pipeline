@@ -1,0 +1,8 @@
+---
+- name: Clone iTrust Git Repo
+  git:
+    repo: "{{ GIT_URL }}"
+    dest: "{{ DEST_PATH }}"
+    clone: yes
+    update: yes
+  become: yes

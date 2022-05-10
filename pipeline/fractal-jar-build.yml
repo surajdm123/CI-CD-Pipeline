@@ -1,0 +1,32 @@
+setup:
+  PACKAGE: 
+    - maven
+    - default-jdk
+    - mysql-server
+    - npm
+  NPM_PACKAGE:
+    - pm2
+  DATA:
+    GIT:
+    - https://github.com/smwolfskill/Fractals.git
+jobs:
+  - name: fractal-build
+    steps:
+      - name: Build Fractal 
+        run: cd ~/Fractals && mvn --batch-mode --update-snapshots clean install
+  - name: fractal-test
+    steps:
+      - name: Test Fractal 
+        run: cd ~/Fractals && mvn test
+  - name: fractal-deploy
+    DATA:
+      port: 8080
+    steps:
+      - name: Package Fractal
+        run: cd ~/Fractals && mvn package && cp ~/Fractals/target/Fractals-0.0.1-SNAPSHOT.jar ~/Fractals.jar
+    scp:
+      SRC_FILE_NAME: ~/Fractals.jar
+      REMOTE_FILE_PATH: /opt/
+    prod_steps:
+      - name: Run the jar file 
+        run: pm2 -s start java -- -jar /opt/Fractals.jar

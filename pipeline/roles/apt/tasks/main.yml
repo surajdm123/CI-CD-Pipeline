@@ -1,0 +1,8 @@
+---
+# tasks file for maven
+- name: Install {{ PACKAGE }}
+  apt:
+    name: "{{ PACKAGE }}"
+    state: present
+    update_cache: yes
+  become: yes

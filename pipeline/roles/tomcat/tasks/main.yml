@@ -1,0 +1,19 @@
+---
+- name: Create a tomcat directory
+  file:
+    path: "{{ DEST_PATH }}"
+    mode: 755
+    recurse: yes
+
+- name: download & unarchive tomcat
+  unarchive:
+    src: "{{ TOMCAT_URL }}"
+    dest: "{{ DEST_PATH }}"
+    remote_src: yes
+    extra_opts: [--strip-components=1]
+
+# - name: start tomcat service
+#   command: "nohup {{ DEST_PATH }}/bin/startup.sh"
+#   register: output
+
+# - debug: var=output.stdout_lines

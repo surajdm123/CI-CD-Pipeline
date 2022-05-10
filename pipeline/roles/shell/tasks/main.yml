@@ -1,0 +1,5 @@
+---
+# run shell command
+- name: Run a shell command
+  become: yess
+  shell: "{{ command }}"

@@ -1,0 +1,35 @@
+setup:
+  PACKAGE: 
+    - maven
+    - default-jdk
+    - mysql-server
+    - npm
+  NPM_PACKAGE:
+    - pm2
+  DATA:
+    GIT:
+    - https://github.com/surajdm123/Fractals.git
+jobs:
+  - name: fractal-build
+    steps:
+      - name: Build Fractal 
+        run: cd ~/Fractals && mvn --batch-mode --update-snapshots clean install
+  - name: fractal-test
+    steps:
+      - name: Test Fractal 
+        run: cd ~/Fractals && mvn test
+  - name: fractal-deploy
+    DATA:
+      port: 8080
+    tomcat:
+      TOMCAT_URL: https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.62/bin/apache-tomcat-9.0.62.tar.gz
+      DEST_PATH: /opt/tomcat
+    steps:
+      - name: Package Fractal
+        run: cd ~/Fractals && mvn package && cp ~/Fractals/target/Fractals-0.0.1-SNAPSHOT.war ~/Fractals.war
+    scp:
+      SRC_FILE_NAME: ~/Fractals.war
+      REMOTE_FILE_PATH: /opt/tomcat/webapps/
+    prod_steps:
+      - name: Start Tomcat
+        run: sh /opt/tomcat/bin/startup.sh

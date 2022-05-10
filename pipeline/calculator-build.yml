@@ -1,0 +1,25 @@
+setup:
+  PACKAGE: 
+    - npm
+  NPM_PACKAGE:
+    - pm2
+  DATA:
+    GIT:
+    - https://github.com/actionsdemos/calculator.git
+jobs:
+  - name: calculator-build
+    steps:
+      - name: Build Calculator Node App 
+        run: cd ~/calculator && npm install
+  - name: calculator-test
+    steps:
+      - name: Test Calculator 
+        run: cd ~/calculator && npm test
+  - name: calculator-deploy
+    DATA:
+      port: 3000
+    prod_steps:
+      - name: Clone repo into prod
+        run: cd /opt/ && git clone {{GIT}}
+      - name: Run the node app 
+        run: cd /opt/calculator && npm install && pm2 -s start /opt/calculator/server.js

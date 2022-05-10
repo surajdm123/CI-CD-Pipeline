@@ -1,0 +1,11 @@
+---
+  - name: "Installing NPM modules using ansible"
+    hosts: localhost
+    connection: local
+
+    tasks:
+    - name: "Install NPM module {{ PACKAGE }}"
+      npm:
+        name: "{{ PACKAGE }}"
+        global: yes
+      become: yes

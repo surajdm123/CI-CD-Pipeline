@@ -1,0 +1,7 @@
+---
+# tasks file for maven
+- name: "Install NPM module {{ PACKAGE }}"
+  npm:
+    name: "{{ PACKAGE }}"
+    global: yes
+  become: yes

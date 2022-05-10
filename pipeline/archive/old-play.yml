@@ -1,0 +1,75 @@
+---
+  - name: "Installing dependencies for iTrust"
+    hosts: localhost
+    connection: local
+
+    roles:
+      - kwoodson.yedit
+
+    tasks:
+    - name: Install Maven
+      apt:
+        name: maven
+        state: present
+        update_cache: yes
+      become: yes
+
+    - name: Specify MySQL root password before installing
+      debconf:
+        name: mysql-server
+        question: mysql-server/root_password
+        value: "{{ DB_PASSWORD }}"
+        vtype: password
+      become: yes
+
+    - name: Confirm MySQL root password before installing
+      debconf:
+        name: mysql-server
+        question: mysql-server/root_password_again
+        value: "{{ DB_PASSWORD }}"
+        vtype: password
+      become: yes
+
+    - name: Install MySQL and other dependencies
+      apt:
+        name: ['mysql-server', 'python3-mysqldb']
+        state: present
+      become: yes
+
+    - name: Install JDK 11
+      apt:
+        name: openjdk-11-jdk
+        state: present
+        update_cache: yes
+      become: yes
+
+    - name: Clone iTrust Git Repo
+      git:
+        repo: https://{{ GIT_ACCESS_TOKEN }}@github.ncsu.edu/engr-csc326-staff/iTrust2-v10.git
+        dest: /iTrust
+        clone: yes
+        update: yes
+      become: yes
+
+    - name: Copying application.yml file
+      copy:
+        src: /iTrust/iTrust2/src/main/resources/application.yml.template
+        dest: /iTrust/iTrust2/src/main/resources/application.yml
+        mode: 0666
+      become: yes
+    
+    - name: Adding database password in application.yml file
+      yedit:
+        src: /iTrust/iTrust2/src/main/resources/application.yml
+        key: spring.datasource.password
+        value: "{{ DB_PASSWORD }}"
+      become: yes
+
+    - name: Run iTrust build job
+      command: mvn --batch-mode --update-snapshots clean test
+      args:
+        chdir: /iTrust/iTrust2
+      register: output
+      become: yes
+
+    - debug: var=output.stdout_lines

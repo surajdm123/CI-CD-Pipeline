@@ -1,0 +1,11 @@
+---
+- local:
+    - name: local
+      criteria_path: test/opunit.yml
+
+- ssh:
+    - name: app_prod
+      # update to your vm's ip
+      target: ubuntu@192.168.xxx.xxx
+      private_key: ~/Library/Application Support/basicvm/key
+      criteria_path: test/app.yml
