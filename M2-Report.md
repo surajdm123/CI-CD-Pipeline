@@ -77,32 +77,6 @@ $ `pipeline build mutation-coverage build.yml`
 - We faced a lot of problems with screenshot and ASTRewrite, and this project improved my debugging skills.
 
 
-## Team contributions
-
-The unity ID of the member shown was responsible for the majority of the respective task.
-* `sdevath`
-    * In `MacBook with M1`, Creating the end-to-end work flow in `build.js` for screenshots, mutation/fuzzing, and checking mutation coverage by Implementing the function `mutationCoverageBuild` in build.js
-    * Researched and implemented pm2 to manage the execution of checkbox.io repository.
-    * Ran the application for 1000 iterations and stored the output.
-    * Implemented a script to calculate mismatch percentage in original and modified rendered HTML as `image-diff.js`
-    * Screencast
-
-
-* `upnadupa`
-    * In `windows`, Creating the end-to-end work flow in `build.js` for screenshots, mutation/fuzzing, and checking mutation coverage by Implementing the function `mutationCoverageBuild` in build.js
-    * Analysed checkbox.io to discover different kind of API calls
-    * Running the mutations for 1000 times and analysing the test results. 
-
-
-* `rmullap`
-    * Implementation of ALL mutation operations in `ASTRewrite.js` for random mutation of any condition/Literal/Statement at any line of code.
-    * Running the mutations for 1000 times and analysing the test results. 
-    * Collaboration with `sdevath` for debugging unexpected parallel execution in `image-diff.js`of mutation analysis and final mutation coverage calculation Issue.
-    * Documentation `readme` file.
-
-
-All team members were equally invested in solving the bugs as well as testing the mutation changes and analysing the results in the server upon execution of the Ansible scripts.
-
 ## Things done in Milestone 2
 
 * Design the work flow by extending build.yml, build.js files for M2 as a function `mutationCoverageBuild`
