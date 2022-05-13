@@ -42,11 +42,11 @@ M3 Link: [https://github.com/CSC-DevOps/Course/blob/master/Project/M3.md](https:
 
 ## Report Links
 
-[M1 Report](https://github.ncsu.edu/CSC-DevOps-S22/DEVOPS-05/blob/main/M1-Report.md)
+[M1 Report](M1-Report.md)
 
-[M2 Report](https://github.ncsu.edu/CSC-DevOps-S22/DEVOPS-05/blob/main/M2-Report.md)
+[M2 Report](M2-Report.md)
 
-[M3 Report](https://github.ncsu.edu/CSC-DevOps-S22/DEVOPS-05/blob/F0-sdevath/M3-Report.md)
+[M3 Report](M3-Report.md)
 
 ## How to Run?
 
