@@ -73,24 +73,3 @@ $ `pipeline deploy inventory itrust-deploy build.yml`
 - Researching about the DigitalOcean APIs, through their documentation was also a challenging task.
 
 
-
-## Team contributions
-
-The unity ID of the member shown was responsible for the majority of the respective task.
-* `sdevath`
-    * Created the command `pipeline prod up` to create two VM's in DigitalOcean for deployment.
-    * Researched about war files and deployed into a tomcat server. 
-    * Implemented `run-proxy.js` to create a proxy service. This service ensures that the user is redirected to the stable running version of the code when accessed.
-    * Screencast
-
-
-* `upnadupa`
-    * Researched about tomcat.
-
-
-* `rmullap`
-    * Researched about ansible-playbook using inventory.
-
-
-All team members were equally invested in solving the bugs as well as testing the mutation changes and analysing the results in the server upon execution of the Ansible scripts.
-
