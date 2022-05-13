@@ -72,7 +72,3 @@ All team members were equally invested in solving the bugs as well as testing th
 ## Checkpoint
 
 [Milestone 1 - Checkpoint](https://github.ncsu.edu/CSC-DevOps-S22/DEVOPS-05/blob/main/CHECKPOINT-M1.md)
-
-## Screencast
-
-[DevOps M1 Project Demo](https://www.youtube.com/watch?v=6dVtX6EOI1I)
