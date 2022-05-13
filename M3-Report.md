@@ -1,10 +1,5 @@
 # M3 Project Report
 
-## Team Members:
-- Ramya Sai Mullapudi (rmullap)
-- Suraj Mallikarjuna Devatha (sdevath)
-- Unnati Nadupalli (upnadupa)
-
 ## Project Details
 M1 Link: [https://github.com/CSC-DevOps/Course/blob/master/Project/M1.md](https://github.com/CSC-DevOps/Course/blob/master/Project/M1.md) <br />
 
@@ -62,11 +57,6 @@ $ `pipeline prod up`
 $ `pipeline deploy inventory itrust-deploy build.yml`
 
 <img width="1184" alt="deploy" src="https://media.github.ncsu.edu/user/22503/files/0f79b1ec-d613-4507-8e0d-796ad15c3126">
-
-
-## Screencast 
-
-[Youtube Link](https://youtu.be/Obs_ZyXa14M)
 
 ## Experiences and learnings about test and Analysis
 - Tomcat
