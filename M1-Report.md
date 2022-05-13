@@ -51,15 +51,6 @@ $ `pipeline build itrust-build build.yml`
 - All the configuration parameters were stored in an encrypted variables yml file. use those variables value in playbook, we had to pass the password file to the ansible-playbook command.
 - Difficult to find the same compatible dependencies, plugins for intel.
 
-## Team contributions
-
-The unity ID of the member shown was responsible for the majority of the respective task.
-* Extending the pipeline template, and install build server with configuring `Ansible` - `sdevath`
-* Configuring the server and create command pipeline build - `upnadupa`
-* Configuring the build environment and auto-run `pipeline build [job-name] [build.yml]` - `rmullap`
-
-All team members were equally invested in solving the bugs as well as testing the configuration changes in the server upon execution of the Ansible scripts.
-
 ## Things done in Milestone 1
 
 * Automatically provision and configure a build server.
