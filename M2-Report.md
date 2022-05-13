@@ -1,10 +1,5 @@
 # M2 Project Report
 
-## Team Members:
-- Ramya Sai Mullapudi (rmullap)
-- Suraj Mallikarjuna Devatha (sdevath)
-- Unnati Nadupalli (upnadupa)
-
 ## Project Details
 M1 Link: [https://github.com/CSC-DevOps/Course/blob/master/Project/M1.md](https://github.com/CSC-DevOps/Course/blob/master/Project/M1.md) <br />
 
@@ -45,10 +40,6 @@ $ `pipeline build itrust-build build.yml`
 $ `pipeline build mutation-coverage build.yml`
 
 ![image](https://media.github.ncsu.edu/user/22503/files/4a236bde-8834-4ef7-aef7-01e5c456441c)
-
-## Screencast 
-
-[Youtube Link](https://youtu.be/11iohXKAoCQ)
 
 ## Files generated with 1000 iterations
 
