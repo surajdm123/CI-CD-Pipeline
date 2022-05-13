@@ -200,12 +200,6 @@ All the projects that are integreated into the pipleine can/will be deployed wit
 
 <img width="1000" alt="deploy" src="https://media.github.ncsu.edu/user/22503/files/0f79b1ec-d613-4507-8e0d-796ad15c3126">
 
-## Screencast 
-
-[![F0 Project Demo Screencast](https://img.youtube.com/vi/KVHndcGHvrU/0.jpg)](https://www.youtube.com/watch?v=KVHndcGHvrU)
-
-[Youtube Link](https://www.youtube.com/watch?v=KVHndcGHvrU)
-
 ## Pipeline Commands 
 
 ### General Commands
